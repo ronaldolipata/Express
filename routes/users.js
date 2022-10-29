@@ -40,7 +40,7 @@ router
     const findUser = req.users.find((user) => user.id === req.id);
     res.status(200).json(findUser);
   })
-  .put(IDValidation, (req, res) => {
+  .patch(IDValidation, (req, res) => {
     const updatedEmail = req.body.email;
     const findUser = req.users.find((user) => user.id === req.id);
     findUser.email = updatedEmail;

@@ -3,7 +3,7 @@ const IDValidation = (req, res, next) => {
   const userExists = req.users.find((user) => user.id === id);
 
   if (!userExists) {
-    return res.status(422).json({
+    return res.status(404).json({
       Error: 'User was not found',
     });
   }
